@@ -12,7 +12,6 @@
 
 bool checkFilePresent(char *argv[])
 {
-	auto bool bCheck = false;
 	auto DIR *dirPtr = NULL;
 	auto struct dirent *dP = NULL;
 	
@@ -27,11 +26,10 @@ bool checkFilePresent(char *argv[])
 	{
 		if((strcmp(argv[2],dP->d_name) == 0))
 		{
-			bCheck = true;
 			break;
 		}	
 	}
-	if(bCheck == true)
+	if((strcmp(argv[2],dP->d_name) == 0))
 	{
 		return true;
 	}
